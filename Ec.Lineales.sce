@@ -19,9 +19,9 @@ f.visible = "on";
 
 function CalcResp_callback(handles)
 //Write your callback for  CalcResp  here
-handles.CalcResp.string; //Obtiene Valor del Campo Donde Se Obtiene la Matriz 
-answer = strtod(handles.CalcResp.string);
-disp(answer);
+sAnswer = handles.CampoParaMat.string; //Obtiene Valor del Campo Donde Se Obtiene la Matriz 
+answer = eval(sAnswer);
+
 //an= eval(answer); //Hace la operacion (Aqui iria el metodo)
 handles.CalcResp.string= string(answer); //Regresa valor 
 endfunction 

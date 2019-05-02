@@ -21,13 +21,13 @@ f.visible = "on";
 
 function Raices_callback(handles)
 //Write your callback for  Raices  here
-exec('C:\Users\Santre\Documents\Raiz.sce', -1)
+exec('Raiz.sce', -1)
 endfunction
 
 
 function EcuacionesLineales_callback(handles)
 //Write your callback for  EcuacionesLineales  here
-exec('C:\Users\Santre\Documents\Ec.Lineales.sce', -1)
+exec('Ec.Lineales.sce', -1)
 endfunction
 
 
@@ -45,7 +45,7 @@ endfunction
 
 function Integracion_callback(handles)
 //Write your callback for  Integracion  here
-
+exec('/Users/miguelgonzalez/Desktop/NumericMethods/IntegracionGUI.sce', -1)
 endfunction
 
 
