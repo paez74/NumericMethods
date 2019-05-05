@@ -22,7 +22,8 @@ handles.QRespuesta=uicontrol(f,'unit','normalized','BackgroundColor',[-1,-1,-1],
 
 handles.CalcularR=uicontrol(f,'unit','normalized','BackgroundColor',[-1,-1,-1],'Enable','on','FontAngle','normal','FontName','Tahoma','FontSize',[12],'FontUnits','points','FontWeight','normal','ForegroundColor',[-1,-1,-1],'HorizontalAlignment','center','ListboxTop',[],'Max',[1],'Min',[0],'Position',[0.3028846,0.3077273,0.2980769,0.1],'Relief','default','SliderStep',[0.01,0.1],'String','Calcular','Style','pushbutton','Value',[0],'VerticalAlignment','middle','Visible','on','Tag','CalcularR','Callback','CalcularR_callback(handles)')
 
-handles.Answer =uicontrol(f,'unit','normalized','BackgroundColor',[-1,-1,-1],'Enable','on','FontAngle','normal','FontName','Tahoma','FontSize',[12],'FontUnits','points','FontWeight','normal','ForegroundColor',[-1,-1,-1],'HorizontalAlignment','left','ListboxTop',[],'Max',[1],'Min',[0],'Position',[0.1009615,0.1877273,0.2980769,0.1],'Relief','default','SliderStep',[0.01,0.1],'String','Ans:','Style','text','Value',[0],'VerticalAlignment','middle','Visible','on','Tag','','Callback','')
+handles.Answer =uicontrol(f,'unit','normalized','BackgroundColor',[-1,-1,-1],'Enable','on','FontAngle','normal','FontName','Tahoma','FontSize',[12],'FontUnits','points','FontWeight','normal','ForegroundColor',[-1,-1,-1],'HorizontalAlignment','left','ListboxTop',[],'Max',[1],'Min',[0],'Position',[0.0209615,0.1077273,0.8580769,0.1],'Relief','default','SliderStep',[0.01,0.1],'String','Ans:','Style','text','Value',[0],'VerticalAlignment','middle','Visible','on','Tag','','Callback','')
+
 
 
 
@@ -127,10 +128,10 @@ function  dXr = CalculaRaiz(dXL,dXU,dEa,iIterator)
        dXrViejo = dXr
        end
 
-      if(dXrEvaluado == 0) then dXr = ("La raiz encontrada es exacta"+ " : " + string(dXr))    // en caso que la raiz evaluada fuera 0
-      elseif(iIteratorLocal == iIterator) then dXr = ("La raiz encontrada fue aproximada con el numero de iteraciones dado" +" : " +string(dXr))  // iteracion fuera mayor
-      elseif(dEALocal < dEa) then dXr = ("La Raiz encontrada fue aproximada con el error absoluto porcentual" + " : " + string(dXr))  end // caso que el Error Acumulado fuera menor al ma
-       dXr = dXr + ascii(10)+( "Error Acumulado : " + string(dEALocal) + "%")
+      if(dXrEvaluado == 0) then dXr = ("La raiz encontrada es exacta"+ " : " + string(dXr)) +ascii(10)   // en caso que la raiz evaluada fuera 0
+      elseif(iIteratorLocal == iIterator) then dXr = ("La raiz encontrada fue aproximada con el numero de iteraciones dado" +" : " +string(dXr)) +ascii(10)  // iteracion fuera mayor
+      elseif(dEALocal < dEa) then dXr = ("La Raiz encontrada fue aproximada con el error absoluto porcentual" + " : " + string(dXr)) +ascii(10)  end // caso que el Error Acumulado fuera menor al ma
+       dXr = dXr + ascii(10) + ( " Error Acumulado : " + string(dEALocal) + "%")
     
 endfunction
 
