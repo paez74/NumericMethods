@@ -69,9 +69,15 @@ function dY = F(dX)
     dY = 1 - exp( -dX)
 endfunction
 
+
+// Esta funcion sirve para calcular leer las variables y desplegar la respuesta
+//
+//   Parametros:
+//....handles tiene toda la informacion del gui
+//   Regresa:
+//     handles.Answer.string  despliega la respuesta
+/////////////////////////////////////////////////////
 function CalcularR_callback(handles)
-//Write your callback for  Q#deTerminos  here
-disp("Si funciono la prueba")
 xL = strtod(handles.QXl.string )
 xU = strtod(handles.QXU.string)
 Term = strtod(handles.Q#deTerminos.string)
@@ -79,18 +85,22 @@ Error = strtod(handles.QError.string)
 sfunction = string(handles.QRespuesta.string)
 deff('dY = F(x)','dY='+ string(sfunction))
 
-disp(string(xL))
-disp(string(xU))
-disp(string(Term))
-disp(string(Error))
-disp(string(sfunction))
  sAns = CalculaRaiz(xL,xU,Error,Term)
-disp(sAns)
-handles.Answer.string = sAns
+
+handles.Answer.string = sAns // escribo la respuesta en el gui
 endfunction
 
 
 
+// Esta funcion sirve para calcular el booleano que dira en que columna estan los numeros negativos 
+// dF simboliza cuantas iteraciones se deben de correr
+//
+//   Parametros:
+//      dXL     el limite inferior
+//      dXH    el limite superior
+//   Regresa:
+//     dBool  si es TRUE los negativos van del lado de dXL , si es falso los negativos van del lado de dXH
+/////////////////////////////////////////////////////
 function dBool = evaluarfunc(dXl,dXu)
     dBool = %F
     fxlEva= F(dXl)
@@ -99,6 +109,19 @@ function dBool = evaluarfunc(dXl,dXu)
     end
     
 endfunction
+// Esta funcion sirve para aproximar la profundidad necesaria para que el volumen sea 30 
+//  La fucion es V = π h 2 [3 R - h ] / 3 cuando V = 30 y el radio es 3, cuanto debe de valer h
+// 
+// 
+//  Funcion que calcula el factorial 
+//
+//   Parametros:
+//      dXL       el limite inferior
+//      dXH       el limite superior
+//      dEa       el maximo Error Acumulado
+//      iIterator el maximo numero de iteraciones
+//   Regresa:
+//     dXr        la aproximacion a la respuesta
 function  dXr = CalculaRaiz(dXL,dXU,dEa,iIterator)
  dBool = evaluarfunc(dXL,dXU);
  dEALocal = 100; // inicializo el error en 100 para que pase el primer while

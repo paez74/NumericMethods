@@ -63,6 +63,14 @@ function CampoReso_callback(handles)
 endfunction
 
 
+// Esta funcion sirve para leer las variables y desplegar la frespuesta 
+//
+// 
+//
+//   Parametros:
+//      handles contiene toda la informacion del gui
+//   Regresa:
+//     handles.Respo.string con la respuesta
 function BotonResp_callback(handles)
 //Write your callback for  BotonResp  here
 dYstring = strsplit(handles.CampoParaY.string,',')
@@ -84,7 +92,7 @@ R(3)=RegresionExponencial(iArrX,iArrY,iV,%F )
 R(4)=RegresionPotencial(iArrX,iArrY,iV,%F )
 
 oldR = 0
- for i=1:length(R)
+ for i=1:length(R) // itero por las Reespuestas por la que tenga la mejor R
         if(R(i) >= oldR)
             bigI=i
             oldR=R(i)
@@ -92,7 +100,7 @@ oldR = 0
     end
     
     
-   select bigI
+   select bigI // selecciono cual desplegar con el booleano activo 
   case 1
    Ans = RegresionLineal(iArrX,iArrY,iV,%T)
   case 2
@@ -108,8 +116,25 @@ disp(Ans)
 else  
     Ans= "El tamaño de X y Y tiene que ser igual" + ascii(10)+ "Tambien tienen que ser mayores a 1"
     end 
-handles.CampoReso.string = string(Ans)
+handles.CampoReso.string = string(Ans) // escribo en el campo de la respuesta
 endfunction
+
+// Esta funcion sirve para calcular alguna sumatoria de Ys para la matriz aumentada
+//  La fucion depende de cual se seleccione hay 6 casos 
+// 1: Sum(y)
+// 2:Sum(y*x)
+// 3.Sum(y*x2)
+// 4.Sum(log(y))
+//5.Sum(log(y)x)
+//6.Sum(log(y)*log(x)) 
+//
+//  Funcion que calcula el factorial 
+//
+//   Parametros:
+//      iArrY      arreglo de valores en Y
+//      itype       Tipo de sumatoria
+//   Regresa:
+//     sumat       la sumatoria completa
 function sumat =  sumatoriaenY(iArrx,iArry,itype)
     
     sumat = 0 
@@ -144,6 +169,23 @@ function sumat =  sumatoriaenY(iArrx,iArry,itype)
 end 
  
 endfunction
+
+// Esta funcion sirve para calcular alguna sumatoria de Xs para la matriz aumentada
+//  La fucion depende de cual se seleccione hay 6 casos 
+// 1: Sum(x)
+// 2:Sum(x2)
+// 3.Sum(x3)
+// 4.Sum(x4)
+//5.Sum(log(x))
+//6.Sum(log(x))2 
+//
+//  Funcion que calcula el factorial 
+//
+//   Parametros:
+//      iArrX       arreglo de valores en X
+//      itype       Tipo de sumatoria
+//   Regresa:
+//     sumat       la sumatoria completa
 function sumat =  sumatoriaenX(iArrx,itype)
     
     sumat = 0 
