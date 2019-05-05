@@ -33,7 +33,7 @@ endfunction
 
 function MejorRegresion_callback(handles)
 //Write your callback for  MejorRegresion  here
-
+exec('MejorRegresionGUI',-1)
 endfunction
 
 
@@ -45,7 +45,7 @@ endfunction
 
 function Integracion_callback(handles)
 //Write your callback for  Integracion  here
-exec('/Users/miguelgonzalez/Desktop/NumericMethods/IntegracionGUI.sce', -1)
+exec('IntegracionGUI.sce', -1)
 endfunction
 
 
