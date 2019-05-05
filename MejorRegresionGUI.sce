@@ -6,8 +6,8 @@ handles.dummy = 0;
 handles.Encabezado=uicontrol(f,'unit','normalized','BackgroundColor',[-1,-1,-1],'Enable','on','FontAngle','normal','FontName','Tahoma','FontSize',[12],'FontUnits','points','FontWeight','normal','ForegroundColor',[-1,-1,-1],'HorizontalAlignment','left','ListboxTop',[],'Max',[1],'Min',[0],'Position',[0.1955128,0.9,0.6041667,0.0931818],'Relief','default','SliderStep',[0.01,0.1],'String','METODO MEJOR REGRESION','Style','text','Value',[0],'VerticalAlignment','middle','Visible','on','Tag','Encabezado','Callback','')
 handles.X=uicontrol(f,'unit','normalized','BackgroundColor',[-1,-1,-1],'Enable','on','FontAngle','normal','FontName','Tahoma','FontSize',[12],'FontUnits','points','FontWeight','normal','ForegroundColor',[-1,-1,-1],'HorizontalAlignment','left','ListboxTop',[],'Max',[1],'Min',[0],'Position',[0.099359,0.7022727,0.0725641,0.1022727],'Relief','default','SliderStep',[0.01,0.1],'String','X','Style','text','Value',[0],'VerticalAlignment','middle','Visible','on','Tag','X','Callback','X_callback(handles)')
 handles.Y=uicontrol(f,'unit','normalized','BackgroundColor',[-1,-1,-1],'Enable','on','FontAngle','normal','FontName','Tahoma','FontSize',[12],'FontUnits','points','FontWeight','normal','ForegroundColor',[-1,-1,-1],'HorizontalAlignment','left','ListboxTop',[],'Max',[1],'Min',[0],'Position',[0.099359,0.5922727,0.0725641,0.1022727],'Relief','default','SliderStep',[0.01,0.1],'String','Y','Style','text','Value',[0],'VerticalAlignment','middle','Visible','on','Tag','Y','Callback','Y_callback(handles)')
-handles.CampoParaY=uicontrol(f,'unit','normalized','BackgroundColor',[-1,-1,-1],'Enable','on','FontAngle','normal','FontName','Tahoma','FontSize',[12],'FontUnits','points','FontWeight','normal','ForegroundColor',[-1,-1,-1],'HorizontalAlignment','left','ListboxTop',[],'Max',[1],'Min',[0],'Position',[0.2119231,0.7,0.1487179,0.1022727],'Relief','default','SliderStep',[0.01,0.1],'String','0','Style','edit','Value',[0],'VerticalAlignment','middle','Visible','on','Tag','CampoParaY','Callback','CampoParaY_callback(handles)')
-handles.CampoParaX=uicontrol(f,'unit','normalized','BackgroundColor',[-1,-1,-1],'Enable','on','FontAngle','normal','FontName','Tahoma','FontSize',[12],'FontUnits','points','FontWeight','normal','ForegroundColor',[-1,-1,-1],'HorizontalAlignment','left','ListboxTop',[],'Max',[1],'Min',[0],'Position',[0.2119231,0.5922727,0.1487179,0.1022727],'Relief','default','SliderStep',[0.01,0.1],'String','0','Style','edit','Value',[0],'VerticalAlignment','middle','Visible','on','Tag','CampoParaX','Callback','CampoParaX_callback(handles)')
+handles.CampoParaX=uicontrol(f,'unit','normalized','BackgroundColor',[-1,-1,-1],'Enable','on','FontAngle','normal','FontName','Tahoma','FontSize',[12],'FontUnits','points','FontWeight','normal','ForegroundColor',[-1,-1,-1],'HorizontalAlignment','left','ListboxTop',[],'Max',[1],'Min',[0],'Position',[0.2119231,0.7,0.1487179,0.1022727],'Relief','default','SliderStep',[0.01,0.1],'String','0','Style','edit','Value',[0],'VerticalAlignment','middle','Visible','on','Tag','CampoParaX','Callback','CampoParaX_callback(handles)')
+handles.CampoParaY=uicontrol(f,'unit','normalized','BackgroundColor',[-1,-1,-1],'Enable','on','FontAngle','normal','FontName','Tahoma','FontSize',[12],'FontUnits','points','FontWeight','normal','ForegroundColor',[-1,-1,-1],'HorizontalAlignment','left','ListboxTop',[],'Max',[1],'Min',[0],'Position',[0.2119231,0.5922727,0.1487179,0.1022727],'Relief','default','SliderStep',[0.01,0.1],'String','0','Style','edit','Value',[0],'VerticalAlignment','middle','Visible','on','Tag','CampoParaY','Callback','CampoParaX_callback(handles)')
 handles.Valor=uicontrol(f,'unit','normalized','BackgroundColor',[-1,-1,-1],'Enable','on','FontAngle','normal','FontName','Tahoma','FontSize',[12],'FontUnits','points','FontWeight','normal','ForegroundColor',[-1,-1,-1],'HorizontalAlignment','left','ListboxTop',[],'Max',[1],'Min',[0],'Position',[0.4134615,0.6454545,0.1570513,0.1022727],'Relief','default','SliderStep',[0.01,0.1],'String','Valor a estimar ','Style','text','Value',[0],'VerticalAlignment','middle','Visible','on','Tag','Valor','Callback','Valor_callback(handles)')
 handles.CampoValor=uicontrol(f,'unit','normalized','BackgroundColor',[-1,-1,-1],'Enable','on','FontAngle','normal','FontName','Tahoma','FontSize',[12],'FontUnits','points','FontWeight','normal','ForegroundColor',[-1,-1,-1],'HorizontalAlignment','left','ListboxTop',[],'Max',[1],'Min',[0],'Position',[0.5837179,0.6454545,0.1570513,0.1022727],'Relief','default','SliderStep',[0.01,0.1],'String','0','Style','edit','Value',[0],'VerticalAlignment','middle','Visible','on','Tag','CampoValor','Callback','CampoValor_callback(handles)')
 handles.CampoReso=uicontrol(f,'unit','normalized','BackgroundColor',[-1,-1,-1],'Enable','on','FontAngle','normal','FontName','Tahoma','FontSize',[12],'FontUnits','points','FontWeight','normal','ForegroundColor',[-1,-1,-1],'HorizontalAlignment','left','ListboxTop',[],'Max',[1],'Min',[0],'Position',[0.4022436,0.2022727,0.400641,0.2977273],'Relief','default','SliderStep',[0.01,0.1],'String','0','Style','edit','Value',[0],'VerticalAlignment','middle','Visible','on','Tag','CampoReso','Callback','CampoReso_callback(handles)')
@@ -65,7 +65,297 @@ endfunction
 
 function BotonResp_callback(handles)
 //Write your callback for  BotonResp  here
+dYstring = strsplit(handles.CampoParaY.string,',')
+iArrY = []
+dXstring = strsplit(handles.CampoParaX.string,',')
+iArrX = []
+for i = 1:size(dYstring,1) 
+       iArrY(i) = strtod(dYstring(i))
+    end
+for i = 1:size(dXstring,1) 
+       iArrX(i) = strtod(dXstring(i))
+    end
+ if(length(iArrX) == length(iArrY))
+     
+iV = strtod(handles.CampoValor.string)
+R(1)= RegresionLineal(iArrX,iArrY,iV,%F)
+R(2)=RegresionCuadratica(iArrX,iArrY,iV,%F )
+R(3)=RegresionExponencial(iArrX,iArrY,iV,%F )
+R(4)=RegresionPotencial(iArrX,iArrY,iV,%F )
 
+oldR = 0
+ for i=1:length(R)
+        if(R(i) >= oldR)
+            bigI=i
+            oldR=R(i)
+        end
+    end
+    
+    
+   select bigI
+  case 1
+   Ans = RegresionLineal(iArrX,iArrY,iV,%T)
+  case 2
+    Ans = RegresionCuadratica(iArrX,iArrY,iV,%T)
+  case 3 
+    Ans = RegresionExponencial(iArrX,iArrY,iV,%T)
+  case 4
+    Ans = RegresionPotencial(iArrX,iArrY,iV,%T)
+  else
+    Ans = 'No se encontro mejor R'
+end 
+disp(Ans) 
+else  
+    Ans= "El tamaño de X y Y tiene que ser igual" + ascii(10)+ "Tambien tienen que ser mayores a 1"
+    end 
+handles.CampoReso.string = string(Ans)
+endfunction
+function sumat =  sumatoriaenY(iArrx,iArry,itype)
+    
+    sumat = 0 
+    
+    select itype
+  case 1
+            for i=1 :length(iArry) 
+          sumat = sumat + iArry(i)
+         end 
+  case 2
+     for i=1 :length(iArry) 
+          sumat = sumat + (iArry(i)*iArrx(i))
+         end 
+   case 3
+   for i=1 :length(iArry) 
+          sumat = sumat + (iArry(i)*(iArrx(i)^2))
+         end 
+    case 4
+    for i=1 :length(iArry) 
+          sumat = sumat + log(iArry(i))
+    end
+    case 5
+    for i=1 :length(iArry) 
+          sumat = sumat + log(iArry(i))*iArrx(i)
+    end
+    case 6
+    for i=1 :length(iArry) 
+          sumat = sumat + log(iArry(i))*log(iArrx(i))
+    end
+  else
+    disp('Sumatoria no existe')
+end 
+ 
+endfunction
+function sumat =  sumatoriaenX(iArrx,itype)
+    
+    sumat = 0 
+    
+    select itype
+  case 1
+            for i=1 :length(iArrx) 
+          sumat = sumat + iArrx(i)
+         end 
+  case 2
+    for i=1 :length(iArrx) 
+          sumat = sumat + (iArrx(i))^2
+         end 
+   case 3
+    for i=1 :length(iArrx) 
+          sumat = sumat + (iArrx(i))^3
+    end 
+    case 4
+    for i=1 :length(iArrx) 
+          sumat = sumat + (iArrx(i))^4
+        end
+    case 5
+    for i=1 :length(iArrx) 
+          sumat = sumat + log(iArrx(i))
+    end
+    case 6
+    for i=1 :length(iArrx) 
+          sumat = sumat + log(iArrx(i))^2
+    end
+       
+  else
+    disp('Sumatoria no existe')
+end 
+ 
+endfunction
+function r =   RegresionLineal(iArrX,iArrY,iPoint,bShow)
+    MAT = zeros(2,3)
+    MAT(1,1) = length(iArrX)
+    MAT(1,2) = sumatoriaenX(iArrX,1)
+    MAT(2,1) = sumatoriaenX(iArrX,1)
+    MAT(2,2) = sumatoriaenX(iArrX,2)
+    MAT(1,3) = sumatoriaenY(iArrX,iArrY,1)
+    MAT(2,3) = sumatoriaenY(iArrX,iArrY,2)
+  // genero la matriz y la resuelvo 
+    x=Gauss(MAT)
+     SST = 0
+    SSE = 0
+        for i=1:length(iArrY)
+      SST = SST + (iArrY(i) - mean(iArrY))^2
+      SSE = SSE + (iArrY(i) - (x(1)+x(2)*iArrX(i)))^2
+    end
+    // Calculo R 
+    r = (SST-SSE)/SST
+    if(bShow == %F)
+        // Si no ha sido seleccionado solo muestra la ecuacion
+    disp("Lineal: Y= " + string(x(1)) + "+" + string(x(2)) + "x" + ", r2= " + string(r))
+end
+ if(bShow == %T)
+     // muestra r2  la solucion al punto a evaluar
+        r = ("El mejor modelo es el lineal con r2= " + string(r))+ ascii(10) ("  x=" + string(iPoint) + " es: " + string(x(1)+x(2)*iPoint))
+        end
+endfunction
+
+//Funcion del Metodo Regresion Lineal  que calcula ecuacion y=a3x2 + a2x + a1 y regresa R2
+// Parametros:
+//   iArrX....arreglo de valores de X
+//   iArrY....arreglo de valores en Y
+//   iPoint....punto a encontrar 
+///  bShow ..... es Seleccionado como mejor Metodo o no?
+// Retorno:
+//   regresa R...es r cuadrada la suma o cantidad de errores en y por y
+//////////////////////////////////////////////////////////////////////////////////
+function r = RegresionCuadratica(iArrX,iArrY,iPoint,bShow)
+    MAT = zeros(3,4)
+    MAT(1,1) = length(iArrX)
+    MAT(1,2) = sumatoriaenX(iArrX,1)
+    MAT(1,3) = sumatoriaenX(iArrX,2)
+    MAT(2,1) = sumatoriaenX(iArrX,1)
+    MAT(2,2) = sumatoriaenX(iArrX,2)
+    MAT(2,3) = sumatoriaenX(iArrX,3)
+    MAT(3,1) = sumatoriaenX(iArrX,2)
+    MAT(3,2) = sumatoriaenX(iArrX,3)
+    MAT(3,3) = sumatoriaenX(iArrX,4)
+    MAT(1,4) = sumatoriaenY(iArrX,iArrY,1)
+    MAT(2,4) = sumatoriaenY(iArrX,iArrY,2)
+    MAT(3,4) = sumatoriaenY(iArrX,iArrY,3)
+    // Se simplifica la matriz aumentada
+    x=Gauss(MAT)
+     SST = 0
+    SSE = 0
+     for i=1:length(iArrY)
+      SST = SST + (iArrY(i) - mean(iArrY))^2
+      SSE = SSE + (iArrY(i) - (x(1)+x(2)*iArrX(i) + x(3)*iArrX(i)^2))^2
+    end
+    // se calcula R
+    r = (SST-SSE)/SST
+    if(bShow==%F)
+        // si no es para enseñar se muestra la ecuacion
+    disp("Cuadratico: y= " + string(x(1)) + "+" + string(x(2)) + "x +" + string(x(3))+ "x^2" + ", r2= " + string(r) )
+   end
+    if(bShow == %T)
+        // si es para mostrar se enseña la r y la solucion en point
+        r = ("El mejor modelo es cuadratico con r2= " + string(r))+ ascii(10) +("  x=" + string(iPoint) + " es: " + string(x(1)+x(2)*iPoint + x(3)*iPoint^2))
+        end
+   
+
+   
+endfunction
+
+//Funcion del Metodo Regresion Exponencial que calcula ecuacion y=ae^bx  y regresa R2
+// Parametros:
+//   iArrX....arreglo de valores de X
+//   iArrY....arreglo de valores en Y
+//   iPoint....punto a encontrar 
+///  bShow ..... es Seleccionado como mejor Metodo o no?
+// Retorno:
+//   regresa R...es r cuadrada la suma o cantidad de errores en y por y
+//////////////////////////////////////////////////////////////////////////////////
+function r = RegresionExponencial(iArrX,iArrY,iPoint,bShow)
+    MAT = zeros(2,3)
+    MAT(1,1) = length(iArrX)
+    MAT(1,2) = sumatoriaenX(iArrX,1)
+    MAT(2,1) = sumatoriaenX(iArrX,1)
+    MAT(2,2) = sumatoriaenX(iArrX,2)
+    MAT(1,3) = sumatoriaenY(iArrX,iArrY,4)
+    MAT(2,3) = sumatoriaenY(iArrX,iArrY,5)
+    // se simplifica matriz aumentada
+    x=Gauss(MAT)
+     SST = 0
+    SSE = 0
+    for i=1:length(iArrY)
+      SST = SST + (iArrY(i) - mean(iArrY))^2
+      SSE = SSE + (iArrY(i) - (exp(x(1))*exp(x(2)*iArrX(i))))^2
+    end
+    // se calcula R
+    r = (SST-SSE)/SST
+    if(bShow == %F)
+        // Si no se muestra se enseña la ecuacion
+    disp("Exponencial: y= " + string(exp(x(1))) + "* e^" + string(x(2))+ "x" + ", r2= " + string(r) )
+end
+ if(bShow == %T)
+     // si se muestra enconces mostrar R y la solucion en el punto
+        r = ("El mejor modelo es  exponencial con r2= " + string(r))+ ascii(10) + ("  x=" + string(iPoint) + " es: " + string(exp(x(1))*exp(x(2)*iPoint)))
+        end 
+    
+endfunction
+
+//Funcion del Metodo Regresion Potencial que calcula ecuacion y=ax^b  y regresa R2
+// Parametros:
+//   iArrX....arreglo de valores de X
+//   iArrY....arreglo de valores en Y
+//   iPoint....punto a encontrar 
+///  bShow ..... es Seleccionado como mejor Metodo o no?
+// Retorno:
+//   regresa R...es r cuadrada la suma o cantidad de errores en y por y
+//////////////////////////////////////////////////////////////////////////////////
+function r =  RegresionPotencial(iArrX,iArrY,iPoint,bShow)
+    MAT = zeros(2,3)
+    MAT(1,1) = length(iArrX)
+    MAT(1,2) = sumatoriaenX(iArrX,5)
+    MAT(2,1) = sumatoriaenX(iArrX,5)
+    MAT(2,2) = sumatoriaenX(iArrX,6)
+    MAT(1,3) = sumatoriaenY(iArrX,iArrY,4)
+    MAT(2,3) = sumatoriaenY(iArrX,iArrY,6)
+    // simplifico la matriz
+    x=Gauss(MAT)
+    SST = 0
+    SSE = 0
+    for i=1:length(iArrY)
+      SST = SST + (iArrY(i) - mean(iArrY))^2
+      SSE = SSE + (log(iArrY(i)) - (exp(x(1)) * iArrX(i)^x(2)))^2
+    end
+    r = (SST-SSE)/SST
+    if(bShow == %F)
+        // si enseñar es falso entonces solo muestro la expresion
+    disp("Potencial: y= " + string(exp(x(1))) + "* x*" + string(x(2)) + ", r2= " + string(r)  )
+end
+
+ if(bShow == %T)
+     // si es la mejor muestro el r2 y la solucion para el punto dado 
+        r = ("El mejor modelo es potencial con r2= " + string(r)) + ascii(10) + (" x=" + string(iPoint) + " es: " + string(exp(x(1)) * iPoint^x(2)))
+        end
+    
+endfunction
+
+//Funcion del Metodo Eliminacion Gauss-Jordan que calcula X
+// Parametros:
+// Mat   Matriz a simplificar
+// Retorno:
+//   regresa X...es el calculo de la solucion del sistema de ecuaciones
+//////////////////////////////////////////////////////////////////////////////////
+function [x]=Gauss(MAT)
+    //  para cada renglon i
+    for i=1:size(MAT,1)-1
+        for k=i+1 : size(MAT,1)
+            fact=-MAT(k,i)/MAT(i,i)
+            // para cada columna j
+            for j=1: size (MAT,2)
+                MAT(k,j)=MAT(k,j)+fact*MAT(i,j)
+            end
+        end
+    end 
+    // para cada renglon i, desde n
+    for i=size(MAT,1):-1:1
+        suma=0
+    // para cada columna j, desde i+1
+        for j=i+1:size(MAT,1)
+            suma=suma+ MAT(i,j)*x(j)
+        end
+     // asigna el metodo a x
+        x(i)=(MAT(i,size(MAT,1)+1)-suma)/MAT(i,i)
+    end
 endfunction
 
 
