@@ -83,8 +83,9 @@ disp(string(xU))
 disp(string(Term))
 disp(string(Error))
 disp(string(sfunction))
- CalculaRaiz(xL,xU,Error,Term)
-
+ sAns = CalculaRaiz(xL,xU,Error,Term)
+disp(sAns)
+handles.Answer.string = sAns
 endfunction
 
 
@@ -125,10 +126,11 @@ function  dXr = CalculaRaiz(dXL,dXU,dEa,iIterator)
        iIteratorLocal = iIteratorLocal+1
        dXrViejo = dXr
        end
-     disp( "Error Acumulado : " + string(dEALocal) + "%")
-      if(dXrEvaluado == 0) then disp("La raiz encontrada es exacta"+ " : " + string(dXr))    // en caso que la raiz evaluada fuera 0
-      elseif(iIteratorLocal == iIterator) then disp("La raiz encontrada fue aproximada con el numero de iteraciones dado" +" : " +string(dXr))  // iteracion fuera mayor
-      elseif(dEALocal < dEa) then disp("La Raiz encontrada fue aproximada con el error absoluto porcentual" + " : " + string(dXr))  end // caso que el Error Acumulado fuera menor al maximo
+
+      if(dXrEvaluado == 0) then dXr = ("La raiz encontrada es exacta"+ " : " + string(dXr))    // en caso que la raiz evaluada fuera 0
+      elseif(iIteratorLocal == iIterator) then dXr = ("La raiz encontrada fue aproximada con el numero de iteraciones dado" +" : " +string(dXr))  // iteracion fuera mayor
+      elseif(dEALocal < dEa) then dXr = ("La Raiz encontrada fue aproximada con el error absoluto porcentual" + " : " + string(dXr))  end // caso que el Error Acumulado fuera menor al ma
+       dXr = dXr + ascii(10)+( "Error Acumulado : " + string(dEALocal) + "%")
     
 endfunction
 
