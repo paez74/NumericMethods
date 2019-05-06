@@ -33,13 +33,13 @@ endfunction
 
 function MejorRegresion_callback(handles)
 //Write your callback for  MejorRegresion  here
-exec('MejorRegresionGUI',-1)
+exec('MejorRegresionGUI.sce',-1)
 endfunction
 
 
 function Interpolacion_callback(handles)
 //Write your callback for  Interpolacion  here
-
+exec('InterpolacionGUI.sce',-1)
 endfunction
 
 

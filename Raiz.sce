@@ -90,12 +90,17 @@ xL = strtod(handles.QXl.string )
 xU = strtod(handles.QXU.string)
 Term = strtod(handles.Q#deTerminos.string)
 Error = strtod(handles.QError.string)
+if(xL > xU) handles.Answer.string = "Xl debe ser menor a Xu" 
+else if(Term < 0 || Error < 0) handles.Answer.string ="Tiene que ser un numero positivo de iteraciones y de error absoluto" 
+else
 sfunction = string(handles.QRespuesta.string)
 deff('dY = F(x)','dY='+ string(sfunction))
 
  sAns = CalculaRaiz(xL,xU,Error,Term)
 
 handles.Answer.string = sAns // escribo la respuesta en el gui
+end
+end
 endfunction
 
 
