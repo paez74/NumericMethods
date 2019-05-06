@@ -122,8 +122,8 @@ function dBool = evaluarfunc(dXl,dXu)
     end
     
 endfunction
-// Esta funcion sirve para aproximar la profundidad necesaria para que el volumen sea 30 
-//  La fucion es V = π h 2 [3 R - h ] / 3 cuando V = 30 y el radio es 3, cuanto debe de valer h
+// Esta funcion sirve para aproximar la raiz de una formula
+// 
 // 
 // 
 //  Funcion que calcula el factorial 
