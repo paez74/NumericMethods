@@ -22,7 +22,7 @@ handles.QRespuesta=uicontrol(f,'unit','normalized','BackgroundColor',[-1,-1,-1],
 
 handles.CalcularR=uicontrol(f,'unit','normalized','BackgroundColor',[-1,-1,-1],'Enable','on','FontAngle','normal','FontName','Tahoma','FontSize',[12],'FontUnits','points','FontWeight','normal','ForegroundColor',[-1,-1,-1],'HorizontalAlignment','center','ListboxTop',[],'Max',[1],'Min',[0],'Position',[0.3028846,0.3077273,0.2980769,0.1],'Relief','default','SliderStep',[0.01,0.1],'String','Calcular','Style','pushbutton','Value',[0],'VerticalAlignment','middle','Visible','on','Tag','CalcularR','Callback','CalcularR_callback(handles)')
 
-handles.Answer =uicontrol(f,'unit','normalized','BackgroundColor',[-1,-1,-1],'Enable','on','FontAngle','normal','FontName','Tahoma','FontSize',[12],'FontUnits','points','FontWeight','normal','ForegroundColor',[-1,-1,-1],'HorizontalAlignment','left','ListboxTop',[],'Max',[1],'Min',[0],'Position',[0.0209615,0.1077273,0.8580769,0.1],'Relief','default','SliderStep',[0.01,0.1],'String','Ans:','Style','text','Value',[0],'VerticalAlignment','middle','Visible','on','Tag','','Callback','')
+handles.Answer =uicontrol(f,'unit','normalized','BackgroundColor',[-1,-1,-1],'Enable','on','FontAngle','normal','FontName','Tahoma','FontSize',[12],'FontUnits','points','FontWeight','normal','ForegroundColor',[-1,-1,-1],'HorizontalAlignment','left','ListboxTop',[],'Max',[1],'Min',[0],'Position',[0.0209615,0.1077273,0.9280769,0.16],'Relief','default','SliderStep',[0.01,0.1],'String','Ans:','Style','text','Value',[0],'VerticalAlignment','middle','Visible','on','Tag','','Callback','')
 
 
 
