@@ -25,45 +25,80 @@ f.visible = "on";
 // Callbacks are defined as below. Please do not delete the comments as it will be used in coming version
 //////////
 
+///////////////////////
+// Esta funcion sirve para leer las variables y desplegar la respuesta 
+//
+// Function ButtonCalcular callback
+//
+//   Parametros:
+//      handles contiene toda la informacion del gui
+//   Regresa:
+//     handles.EditResp.string con la respuesta
+///////////////////////
+
 function ButtonCalcular_callback(handles)
 //Write your callback for  ButtonCalcular  here
+
+// Creacion de variables con lo que el usuario escribe
 dA = strtod(handles.EditLimInf.string)
 dB = strtod(handles.EditLimSup.string)
 iN = strtod(handles.EditNumTrap.string)
 
-
+// Ecuacion escrita por el usuario
 sEcuacion = handles.EditEcuacion.string
 deff("[F] = func(x)", "F =" + sEcuacion)
 
-
+//Validar limites
 if dA < dB then
+    
+    //Validar iN
     if iN > 0 then
     //despliego la intergal aproximada
     handles.EditResp.string = string(areaTrapecio(dA, dB, iN))
+    
     else
     //despliego Error cuando el usuario da mal el numero de trapecios
     handles.EditResp.string = "Error en numero de trapecios"
+    
     end
 else
     //despliego Error cuando el usuario da mal los limites
     handles.EditResp.string = "Error en limites"
+    
 end
 
 endfunction
 
-
+//////////////////////////////////////////////////////
+//  areaTrapecio
+//
+//  Funcion que calcula la integral con trapecios
+//
+//   Parametros:
+//      dA     es el valor del limite inicial
+//      dB     es el valor del limite final
+//      iN     es el numero de trapecios
+//   Regresa:
+//     dSuma   es el area calculada como la suma de trapecios
+/////////////////////////////////////////////////////
 function dSuma = areaTrapecio(dA, dB, iN)
+    
     // calculo h (base de cada trapecio)
     dH = (dB - dA) / iN
+    
     // inicializo la suma
     dSuma = 0
+    
     // elaboro el ciclo para cada trapecio
     for i = 1 : iN - 1
+        
         // acumulo la suma
         dSuma = dSuma +  func(dA + i * dH)
     end
+    
     //Hago la ultima funcion de trapecios
     dSuma = dH / 2 * (func(dA) + 2 * dSuma + func(dB))
+    
 endfunction
 
 
